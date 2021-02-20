@@ -1,0 +1,14 @@
+F:\VS Projects\Sem 6\BudgetManager\EmployeeLibrary\EmployeeLibrary\bin\Debug\EmployeeLibrary.dll.config
+F:\VS Projects\Sem 6\BudgetManager\EmployeeLibrary\EmployeeLibrary\bin\Debug\EmployeeLibrary.dll
+F:\VS Projects\Sem 6\BudgetManager\EmployeeLibrary\EmployeeLibrary\bin\Debug\EmployeeLibrary.pdb
+F:\VS Projects\Sem 6\BudgetManager\EmployeeLibrary\EmployeeLibrary\obj\Debug\EmployeeLibrary.csprojAssemblyReference.cache
+F:\VS Projects\Sem 6\BudgetManager\EmployeeLibrary\EmployeeLibrary\obj\Debug\EmployeeLibrary.csproj.CoreCompileInputs.cache
+F:\VS Projects\Sem 6\BudgetManager\EmployeeLibrary\EmployeeLibrary\obj\Debug\EmployeeLibrary.dll
+F:\VS Projects\Sem 6\BudgetManager\EmployeeLibrary\EmployeeLibrary\obj\Debug\EmployeeLibrary.pdb
+D:\DDIT\sem6\SOC\project\BudgetManager\BudgetManager\EmployeeLibrary\EmployeeLibrary\bin\Debug\EmployeeLibrary.dll.config
+D:\DDIT\sem6\SOC\project\BudgetManager\BudgetManager\EmployeeLibrary\EmployeeLibrary\bin\Debug\EmployeeLibrary.dll
+D:\DDIT\sem6\SOC\project\BudgetManager\BudgetManager\EmployeeLibrary\EmployeeLibrary\bin\Debug\EmployeeLibrary.pdb
+D:\DDIT\sem6\SOC\project\BudgetManager\BudgetManager\EmployeeLibrary\EmployeeLibrary\obj\Debug\EmployeeLibrary.csprojAssemblyReference.cache
+D:\DDIT\sem6\SOC\project\BudgetManager\BudgetManager\EmployeeLibrary\EmployeeLibrary\obj\Debug\EmployeeLibrary.csproj.CoreCompileInputs.cache
+D:\DDIT\sem6\SOC\project\BudgetManager\BudgetManager\EmployeeLibrary\EmployeeLibrary\obj\Debug\EmployeeLibrary.dll
+D:\DDIT\sem6\SOC\project\BudgetManager\BudgetManager\EmployeeLibrary\EmployeeLibrary\obj\Debug\EmployeeLibrary.pdb
