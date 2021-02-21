@@ -18,30 +18,29 @@ namespace EmployeeClient
         {
             Label3.Text = "button clicked !!";
 
+            EmployeeClient.ServiceReference2.EmployeeServiceClient proxy = new
+               EmployeeClient.ServiceReference2.EmployeeServiceClient("BasicHttpBinding_IEmployeeService");
 
-            employeeclient.servicereference2.employeeserviceclient proxy = new
-               employeeclient.servicereference2.employeeserviceclient("basichttpbinding_iemployeeservice");
 
+            string fn = fnm.Text;
+            string ln = lnm.Text;
+            string mobile_no = mno.Text;
+            string email = eid.Text;
+            string password = pass.Text;
+            string cpassword = cpass.Text;
 
-            string fn = fnm.text;
-            string ln = lnm.text;
-            string mobile_no = mno.text;
-            string email = eid.text;
-            string password = pass.text;
-            string cpassword = cpass.text;
-
-            label1.text = proxy.saveuser(fn, ln, mobile_no, email, password);
+            Label1.Text = proxy.saveUser(fn, ln, mobile_no, email, password);
             string ack = "";
             if (ack == "saved")
             {
-                scriptmanager.registerclientscriptblock(this, this.gettype(), "alertmessage", "alert('record inserted successfully')", true);
-                label1.text = "registration successfully";
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')", true);
+                Label1.Text = "Registration successfully";
             }
             else
             {
-                scriptmanager.registerclientscriptblock(this, this.gettype(), "alertmessage", "alert('something went wrong')", true);
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('something went wrong')", true);
 
-                label1.text = ack;
+                Label1.Text = ack;
             }
         }
     }
