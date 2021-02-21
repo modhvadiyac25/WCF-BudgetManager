@@ -11,7 +11,7 @@ namespace EmployeeClient
 {
 
 
-    public partial class LoginForm
+    public partial class Login
     {
 
         /// <summary>
@@ -69,13 +69,13 @@ namespace EmployeeClient
         protected global::System.Web.UI.WebControls.TextBox pass;
 
         /// <summary>
-        /// login control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button login;
+        protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
         /// Label4 control.

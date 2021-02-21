@@ -20,5 +20,8 @@ namespace EmployeeLibrary
 
         [OperationContract]
         string saveUser(string fn, string ln, string mobile_no, string email, string password);
+
+        [OperationContract]
+        string login(string username, string password);
     }
 }

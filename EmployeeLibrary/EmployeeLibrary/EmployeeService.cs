@@ -14,6 +14,57 @@ namespace EmployeeLibrary
     {
         static string connectionString = @"Data Source = (localdb)\MSSQLLocalDB;Initial Catalog = BudgetManager; Integrated Security = True; Connect Timeout = 30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         SqlConnection con = new SqlConnection(connectionString);
+
+
+        public string login(string username,string password)
+        {
+            try
+            {
+                string query = "select * from users";
+                SqlCommand cmd = new SqlCommand(query, con);
+                con.Open();
+                cmd.CommandType = CommandType.Text;
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    if ((String.Compare(username, dr["email"].ToString()) == 1) && (String.Compare(username, dr["password"].ToString()) == 1))
+                    {
+                        return dr["uid"].ToString();
+                    }
+                    else
+                    {
+                        return "Username or Password May Incorrect !!";
+                    }
+            
+                }
+
+                dr.Close();
+                return "Faild";
+
+                //if (sdr.HasRows)
+                //{
+                //    while (sdr.Read())
+                //    {
+                //        return sdr.GetValue(1).ToString();
+                //        //sdr.GetValue(0).ToString();
+                //    }
+                //}
+                //else
+                //{
+                //    return "faild";
+                //}
+            }
+            catch (Exception ex)
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+                return (ex.Message.ToString());
+            } 
+        }
+
+
         public string saveUser(string fn, string ln, string mobile_no, string email, string password)
         {
             try
@@ -23,8 +74,8 @@ namespace EmployeeLibrary
                // cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@fn", fn);
                 cmd.Parameters.AddWithValue("@ln", ln);
-                cmd.Parameters.AddWithValue("@email", mobile_no);
-                cmd.Parameters.AddWithValue("@mno", email);
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@mno", mobile_no);
                 cmd.Parameters.AddWithValue("@password", password);
                 con.Open();
                 int ack = cmd.ExecuteNonQuery();

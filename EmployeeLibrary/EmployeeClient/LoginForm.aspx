@@ -1,10 +1,19 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginForm.aspx.cs" Inherits="EmployeeClient.OginForm" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginForm.aspx.cs" Inherits="EmployeeClient.LoginForm" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("div").remove(".aspNetHidden");
+        $("#__VIEWSTATEGENERATOR").remove();
+        $("#__EVENTVALIDATION").remove();
+        $("#__VIEWSTATE").remove();
+    });
+</script>
 <style>
     div {
   border-radius: 5px;
@@ -18,8 +27,7 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
-	margin: auto;
-        
+	margin: auto; 
         border-style: double solid;
         border-width: 5px;
 }
@@ -37,12 +45,13 @@
             <br />
             <br />
             <asp:Label ID="Label3" runat="server" Text="Password"></asp:Label>
-&nbsp;:<asp:TextBox ID="pass" runat="server"></asp:TextBox>
+&nbsp;:<asp:TextBox ID="pass" type="password" runat="server"></asp:TextBox>
             <br />
             <br />
-            <asp:Button ID="login" runat="server" Text="Login" OnClick="login_Click" />
+            <asp:Button ID="login" runat="server" OnClick="login_Click" Text="Login" />
             <br />
             <br />
+            <asp:Label ID="Label4" runat="server"></asp:Label>
             <br />
             <br />
             <br />

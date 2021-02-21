@@ -20,6 +20,12 @@ namespace EmployeeClient.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/saveUser", ReplyAction="http://tempuri.org/IEmployeeService/saveUserResponse")]
         System.Threading.Tasks.Task<string> saveUserAsync(string fn, string ln, string mobile_no, string email, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/login", ReplyAction="http://tempuri.org/IEmployeeService/loginResponse")]
+        string login(string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/login", ReplyAction="http://tempuri.org/IEmployeeService/loginResponse")]
+        System.Threading.Tasks.Task<string> loginAsync(string username, string password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,6 +61,14 @@ namespace EmployeeClient.ServiceReference1 {
         
         public System.Threading.Tasks.Task<string> saveUserAsync(string fn, string ln, string mobile_no, string email, string password) {
             return base.Channel.saveUserAsync(fn, ln, mobile_no, email, password);
+        }
+        
+        public string login(string username, string password) {
+            return base.Channel.login(username, password);
+        }
+        
+        public System.Threading.Tasks.Task<string> loginAsync(string username, string password) {
+            return base.Channel.loginAsync(username, password);
         }
     }
 }
