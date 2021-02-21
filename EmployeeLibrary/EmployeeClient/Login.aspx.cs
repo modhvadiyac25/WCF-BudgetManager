@@ -11,20 +11,19 @@ namespace EmployeeClient
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Label4.Text = "page Load";
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Label4.Text = "button clicked";
             EmployeeClient.ServiceReference1.EmployeeServiceClient proxy = new
                             EmployeeClient.ServiceReference1.EmployeeServiceClient("BasicHttpBinding_IEmployeeService");
 
             string username = email.Text;
-            string password = this.pass.Text;
+            string password = pass.Text;
 
-            Session["uid"] = proxy.login("jeet@g.c", "jeet");
-            Label4.Text = Session["uid"].ToString() + "this is user id ";
+            /*Session["uid"]*/ Label4.Text = proxy.login(username.ToString(), password.ToString());
+            // = Session["uid"].ToString() + "this is user id ";
             
             // Label4.Text = i++.ToString();
         }

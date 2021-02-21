@@ -5,16 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        $("div").remove(".aspNetHidden");
-        $("#__VIEWSTATEGENERATOR").remove();
-        $("#__EVENTVALIDATION").remove();
-        $("#__VIEWSTATE").remove();
-    });
-    </script>
-    
+
 </head>
 <body>
     <form id="form1" runat="server">
