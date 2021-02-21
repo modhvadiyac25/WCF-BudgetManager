@@ -19,6 +19,6 @@ namespace EmployeeLibrary
         //Employee GetEmployee(int id);
 
         [OperationContract]
-        string saveUser(string fn, string ln, int mobile_no, string email, string password);
+        string saveUser(string fn, string ln, string mobile_no, string email, string password);
     }
 }

@@ -12,14 +12,15 @@ namespace EmployeeLibrary
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "EmployeeService" in both code and config file together.
     public class EmployeeService : IEmployeeService
     {
-        static string connectionString = @"Data Source = (localdb)\\MSSQLLocalDB;Initial Catalog = BudgetManager; Integrated Security = True; Connect Timeout = 30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        static string connectionString = @"Data Source = (localdb)\MSSQLLocalDB;Initial Catalog = BudgetManager; Integrated Security = True; Connect Timeout = 30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         SqlConnection con = new SqlConnection(connectionString);
-        public string saveUser(string fn, string ln, int mobile_no, string email, string password)
+        public string saveUser(string fn, string ln, string mobile_no, string email, string password)
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("insert into users values (@fn,@ln,@email,@mno,@password)", con);
-                cmd.CommandType = CommandType.StoredProcedure;
+                string query = "insert into users(fname,lname,email,mno,password) values (@fn,@ln,@email,@mno,@password)";
+                SqlCommand cmd = new SqlCommand(query, con);
+               // cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@fn", fn);
                 cmd.Parameters.AddWithValue("@ln", ln);
                 cmd.Parameters.AddWithValue("@email", mobile_no);
@@ -38,15 +39,9 @@ namespace EmployeeLibrary
                 }
                 return (ex.Message.ToString());
             }
-
         }
-
     }
 }
-
-
-
-
 
 
 

@@ -2,114 +2,52 @@
 
 <!DOCTYPE html>
 
-<html><head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $("div").remove(".aspNetHidden");
-        $("#__VIEWSTATEGENERATOR").remove();
-        $("#__EVENTVALIDATION").remove();
-        $("#__VIEWSTATE").remove();
-       
-    });
-</script>
-      </head>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
 <style>
-input[type=text] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  -webkit-transition: 1.0s;
-  transition: 1.0s;
-  outline: none;
-}
-
-input[type=text]:focus {
-  border: 3px solid red;
-}
-input[type=password] {
-   width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  -webkit-transition: 1.0s;
-  transition: 1.0s;
-  outline: none;
-}
-input[type=password]:focus {
-  border: 3px solid red;
-}
-
-input[type=submit] {
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-  font-weight: bold;
-}
-
-label {
-    color : #dfe7e0 ;
-    font-weight: bold;
-}
-div {
+    div {
   border-radius: 5px;
-  background-color: #4e6ce6;
-  border-style : solid;
+  background-color: #4e6ce6 ;
+  border-style : solid ;
   padding: 30px;
   width: 250px;
   align: center;
   position: relative;
-	top:9px;
-	bottom: -289px;
-	left: -4px;
-	right: 4px;
-  	
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	margin: auto;
+        
+        border-style: double solid;
+        border-width: 5px;
 }
-h1 {
-    text-align: center;
-    color : #fefdfd ;
-    font-weight: bold;
-}
-h3 {
-    text-align: center;
-    color : #fefdfd ;
-    font-weight: bold;
-}
-.center {
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-}
-.backColor {
-    color: #ebebeb;
-    background-color: #4fc7fa;
-}
+   </style>
+</head>
 
-</style>
-<body class="backColor">
-<div class="center">
-    <h1>Login Here</h1>
-     
-    <form id="form1"  runat="server">
-       
-    <label for="mail">Email Id</label>
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password" placeholder="Enter Your Password.." required>
-        <asp:Button ID="login" runat="server" Text="login" OnClick="login_Click"  />
-	<h3>Don't have an account?<a href="#">Click Here</a></h3>
-    </form>     
-</div>
+<body>
+    <form id="form1" runat="server">
+        <div align="center" >
+            <asp:Label ID="Label1" runat="server" Text="Login Form"></asp:Label>
+            <br />
+            <br />
+            <asp:Label ID="Label2" runat="server" Text="Username : "></asp:Label>
+            <asp:TextBox ID="email" runat="server"></asp:TextBox>
+            <br />
+            <br />
+            <asp:Label ID="Label3" runat="server" Text="Password"></asp:Label>
+&nbsp;:<asp:TextBox ID="pass" runat="server"></asp:TextBox>
+            <br />
+            <br />
+            <asp:Button ID="login" runat="server" Text="Login" OnClick="login_Click" />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        </div>
+    </form>
 </body>
 </html>

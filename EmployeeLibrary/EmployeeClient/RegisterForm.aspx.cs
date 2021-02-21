@@ -11,36 +11,38 @@ namespace EmployeeClient
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //  Label1.Text = " ";
+            Label3.Text = "page loaded";
         }
-        protected void Button1_Click(object sender, EventArgs e)
+
+        protected void btn_register_Click(object sender, EventArgs e)
         {
-            EmployeeClient.ServiceReference2.EmployeeServiceClient proxy = new
-               EmployeeClient.ServiceReference2.EmployeeServiceClient("BasicHttpBinding_IEmployeeService");
+            Label3.Text = "button clicked !!";
 
 
-            string fn = fname.Text;
-            string ln = lname.Text;
-            int mobile_no =Convert.ToInt32(mno.Text);
-            string email = mail.Text;
-            string password = pass1.Text;
+            employeeclient.servicereference2.employeeserviceclient proxy = new
+               employeeclient.servicereference2.employeeserviceclient("basichttpbinding_iemployeeservice");
 
-            Label1.Text  = proxy.saveUser(fn,ln,mobile_no,email, password);
+
+            string fn = fnm.text;
+            string ln = lnm.text;
+            string mobile_no = mno.text;
+            string email = eid.text;
+            string password = pass.text;
+            string cpassword = cpass.text;
+
+            label1.text = proxy.saveuser(fn, ln, mobile_no, email, password);
             string ack = "";
             if (ack == "saved")
             {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')", true);
-                Label1.Text = "Registration successfully";
+                scriptmanager.registerclientscriptblock(this, this.gettype(), "alertmessage", "alert('record inserted successfully')", true);
+                label1.text = "registration successfully";
             }
             else
             {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('something went wrong')", true);
+                scriptmanager.registerclientscriptblock(this, this.gettype(), "alertmessage", "alert('something went wrong')", true);
 
-                Label1.Text = ack;
+                label1.text = ack;
             }
-
-            
-
         }
     }
 }

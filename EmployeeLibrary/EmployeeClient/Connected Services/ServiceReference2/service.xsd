@@ -5,7 +5,7 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="fn" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="ln" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="mobile_no" type="xs:int" />
+        <xs:element minOccurs="0" name="mobile_no" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
       </xs:sequence>

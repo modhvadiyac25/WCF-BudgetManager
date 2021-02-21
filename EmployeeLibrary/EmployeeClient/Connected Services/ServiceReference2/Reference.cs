@@ -16,10 +16,10 @@ namespace EmployeeClient.ServiceReference2 {
     public interface IEmployeeService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/saveUser", ReplyAction="http://tempuri.org/IEmployeeService/saveUserResponse")]
-        string saveUser(string fn, string ln, int mobile_no, string email, string password);
+        string saveUser(string fn, string ln, string mobile_no, string email, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/saveUser", ReplyAction="http://tempuri.org/IEmployeeService/saveUserResponse")]
-        System.Threading.Tasks.Task<string> saveUserAsync(string fn, string ln, int mobile_no, string email, string password);
+        System.Threading.Tasks.Task<string> saveUserAsync(string fn, string ln, string mobile_no, string email, string password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -49,11 +49,11 @@ namespace EmployeeClient.ServiceReference2 {
                 base(binding, remoteAddress) {
         }
         
-        public string saveUser(string fn, string ln, int mobile_no, string email, string password) {
+        public string saveUser(string fn, string ln, string mobile_no, string email, string password) {
             return base.Channel.saveUser(fn, ln, mobile_no, email, password);
         }
         
-        public System.Threading.Tasks.Task<string> saveUserAsync(string fn, string ln, int mobile_no, string email, string password) {
+        public System.Threading.Tasks.Task<string> saveUserAsync(string fn, string ln, string mobile_no, string email, string password) {
             return base.Channel.saveUserAsync(fn, ln, mobile_no, email, password);
         }
     }

@@ -20,3 +20,14 @@ D:\DDIT\sem6\SOC\project\BudgetManager\BudgetManager\EmployeeLibrary\ServiceHost
 D:\DDIT\sem6\SOC\project\BudgetManager\BudgetManager\EmployeeLibrary\ServiceHostConsole\obj\Debug\ServiceHostConsole.csproj.CopyComplete
 D:\DDIT\sem6\SOC\project\BudgetManager\BudgetManager\EmployeeLibrary\ServiceHostConsole\obj\Debug\ServiceHostConsole.exe
 D:\DDIT\sem6\SOC\project\BudgetManager\BudgetManager\EmployeeLibrary\ServiceHostConsole\obj\Debug\ServiceHostConsole.pdb
+D:\DDIT\sem6\SOC\project\BudgetManager\WCF-BudgetManager\EmployeeLibrary\ServiceHostConsole\bin\Debug\ServiceHostConsole.exe.config
+D:\DDIT\sem6\SOC\project\BudgetManager\WCF-BudgetManager\EmployeeLibrary\ServiceHostConsole\bin\Debug\ServiceHostConsole.exe
+D:\DDIT\sem6\SOC\project\BudgetManager\WCF-BudgetManager\EmployeeLibrary\ServiceHostConsole\bin\Debug\ServiceHostConsole.pdb
+D:\DDIT\sem6\SOC\project\BudgetManager\WCF-BudgetManager\EmployeeLibrary\ServiceHostConsole\bin\Debug\EmployeeLibrary.dll
+D:\DDIT\sem6\SOC\project\BudgetManager\WCF-BudgetManager\EmployeeLibrary\ServiceHostConsole\bin\Debug\EmployeeLibrary.pdb
+D:\DDIT\sem6\SOC\project\BudgetManager\WCF-BudgetManager\EmployeeLibrary\ServiceHostConsole\bin\Debug\EmployeeLibrary.dll.config
+D:\DDIT\sem6\SOC\project\BudgetManager\WCF-BudgetManager\EmployeeLibrary\ServiceHostConsole\obj\Debug\ServiceHostConsole.csprojAssemblyReference.cache
+D:\DDIT\sem6\SOC\project\BudgetManager\WCF-BudgetManager\EmployeeLibrary\ServiceHostConsole\obj\Debug\ServiceHostConsole.csproj.CoreCompileInputs.cache
+D:\DDIT\sem6\SOC\project\BudgetManager\WCF-BudgetManager\EmployeeLibrary\ServiceHostConsole\obj\Debug\ServiceHostConsole.csproj.CopyComplete
+D:\DDIT\sem6\SOC\project\BudgetManager\WCF-BudgetManager\EmployeeLibrary\ServiceHostConsole\obj\Debug\ServiceHostConsole.exe
+D:\DDIT\sem6\SOC\project\BudgetManager\WCF-BudgetManager\EmployeeLibrary\ServiceHostConsole\obj\Debug\ServiceHostConsole.pdb
