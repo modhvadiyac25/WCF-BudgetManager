@@ -27,9 +27,17 @@ namespace EmployeeLibrary
                 cmd.Parameters.AddWithValue("@mno", email);
                 cmd.Parameters.AddWithValue("@password", password);
                 con.Open();
-                cmd.ExecuteNonQuery();
+                int ack = cmd.ExecuteNonQuery();
                 con.Close();
-                return "saved";
+                if(ack ==1 )
+                {
+                    return "saved";
+                }
+                else
+                {
+                    return "failed";
+                }
+                
             }
             catch (Exception ex)
             {

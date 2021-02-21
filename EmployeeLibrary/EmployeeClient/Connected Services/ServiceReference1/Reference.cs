@@ -9,102 +9,17 @@
 //------------------------------------------------------------------------------
 
 namespace EmployeeClient.ServiceReference1 {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Employee", Namespace="http://schemas.datacontract.org/2004/07/EmployeeLibrary")]
-    [System.SerializableAttribute()]
-    public partial class Employee : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int EmployeeIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FirstNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LastNameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int EmployeeID {
-            get {
-                return this.EmployeeIDField;
-            }
-            set {
-                if ((this.EmployeeIDField.Equals(value) != true)) {
-                    this.EmployeeIDField = value;
-                    this.RaisePropertyChanged("EmployeeID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FirstName {
-            get {
-                return this.FirstNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
-                    this.FirstNameField = value;
-                    this.RaisePropertyChanged("FirstName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastName {
-            get {
-                return this.LastNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
-                    this.LastNameField = value;
-                    this.RaisePropertyChanged("LastName");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IEmployeeService")]
     public interface IEmployeeService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/GetEmployees", ReplyAction="http://tempuri.org/IEmployeeService/GetEmployeesResponse")]
-        System.Data.DataSet GetEmployees();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/saveUser", ReplyAction="http://tempuri.org/IEmployeeService/saveUserResponse")]
+        string saveUser(string fn, string ln, string mobile_no, string email, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/GetEmployees", ReplyAction="http://tempuri.org/IEmployeeService/GetEmployeesResponse")]
-        System.Threading.Tasks.Task<System.Data.DataSet> GetEmployeesAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/GetEmployee", ReplyAction="http://tempuri.org/IEmployeeService/GetEmployeeResponse")]
-        EmployeeClient.ServiceReference1.Employee GetEmployee(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/GetEmployee", ReplyAction="http://tempuri.org/IEmployeeService/GetEmployeeResponse")]
-        System.Threading.Tasks.Task<EmployeeClient.ServiceReference1.Employee> GetEmployeeAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/saveUser", ReplyAction="http://tempuri.org/IEmployeeService/saveUserResponse")]
+        System.Threading.Tasks.Task<string> saveUserAsync(string fn, string ln, string mobile_no, string email, string password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -134,20 +49,12 @@ namespace EmployeeClient.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public System.Data.DataSet GetEmployees() {
-            return base.Channel.GetEmployees();
+        public string saveUser(string fn, string ln, string mobile_no, string email, string password) {
+            return base.Channel.saveUser(fn, ln, mobile_no, email, password);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> GetEmployeesAsync() {
-            return base.Channel.GetEmployeesAsync();
-        }
-        
-        public EmployeeClient.ServiceReference1.Employee GetEmployee(int id) {
-            return base.Channel.GetEmployee(id);
-        }
-        
-        public System.Threading.Tasks.Task<EmployeeClient.ServiceReference1.Employee> GetEmployeeAsync(int id) {
-            return base.Channel.GetEmployeeAsync(id);
+        public System.Threading.Tasks.Task<string> saveUserAsync(string fn, string ln, string mobile_no, string email, string password) {
+            return base.Channel.saveUserAsync(fn, ln, mobile_no, email, password);
         }
     }
 }

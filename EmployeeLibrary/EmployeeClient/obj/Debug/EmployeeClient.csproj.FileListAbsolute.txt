@@ -170,6 +170,7 @@ D:\DDIT\sem6\SOC\project\BudgetManager\WCF-BudgetManager\EmployeeLibrary\Employe
 D:\DDIT\sem6\SOC\project\BudgetManager\WCF-BudgetManager\EmployeeLibrary\EmployeeClient\bin\roslyn\VBCSCompiler.exe.config
 D:\DDIT\sem6\SOC\project\BudgetManager\WCF-BudgetManager\EmployeeLibrary\EmployeeClient\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\DDIT\sem6\SOC\project\BudgetManager\WCF-BudgetManager\EmployeeLibrary\EmployeeClient\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\DDIT\sem6\SOC\project\BudgetManager\WCF-BudgetManager\EmployeeLibrary\EmployeeClient\obj\Debug\EmployeeClient.csprojAssemblyReference.cache
 D:\DDIT\sem6\SOC\project\BudgetManager\WCF-BudgetManager\EmployeeLibrary\EmployeeClient\obj\Debug\EmployeeClient.csproj.CoreCompileInputs.cache
 D:\DDIT\sem6\SOC\project\BudgetManager\WCF-BudgetManager\EmployeeLibrary\EmployeeClient\obj\Debug\EmployeeClient.csproj.CopyComplete
 D:\DDIT\sem6\SOC\project\BudgetManager\WCF-BudgetManager\EmployeeLibrary\EmployeeClient\obj\Debug\EmployeeClient.dll

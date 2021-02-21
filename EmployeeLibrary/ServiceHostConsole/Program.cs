@@ -12,12 +12,12 @@ namespace ServiceHostConsole
     {
         static void Main(string[] args)
         {
-            try 
+            try
             {
                 Type t = typeof(EmployeeService);
-                Uri tcp = new Uri("net.tcp://localhost:8010/EmployeeService");
+                //Uri tcp = new Uri("net.tcp://localhost:8010/EmployeeService");
                 Uri http = new Uri("http://localhost:8000/EmployeeService");
-                ServiceHost host = new ServiceHost(t, tcp, http);
+                ServiceHost host = new ServiceHost(t, http);
                 host.Open();
                 Console.WriteLine("Service published at " + DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss"));
                 Console.ReadLine();
