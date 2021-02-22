@@ -15,6 +15,7 @@ D:\DDIT\sem6\SOC\project\BudgetManager\BudgetManager\EmployeeLibrary\EmployeeLib
 D:\DDIT\sem6\SOC\project\BudgetManager\WCF-BudgetManager\EmployeeLibrary\EmployeeLibrary\bin\Debug\EmployeeLibrary.dll.config
 D:\DDIT\sem6\SOC\project\BudgetManager\WCF-BudgetManager\EmployeeLibrary\EmployeeLibrary\bin\Debug\EmployeeLibrary.dll
 D:\DDIT\sem6\SOC\project\BudgetManager\WCF-BudgetManager\EmployeeLibrary\EmployeeLibrary\bin\Debug\EmployeeLibrary.pdb
+D:\DDIT\sem6\SOC\project\BudgetManager\WCF-BudgetManager\EmployeeLibrary\EmployeeLibrary\obj\Debug\EmployeeLibrary.csprojAssemblyReference.cache
 D:\DDIT\sem6\SOC\project\BudgetManager\WCF-BudgetManager\EmployeeLibrary\EmployeeLibrary\obj\Debug\EmployeeLibrary.csproj.CoreCompileInputs.cache
 D:\DDIT\sem6\SOC\project\BudgetManager\WCF-BudgetManager\EmployeeLibrary\EmployeeLibrary\obj\Debug\EmployeeLibrary.dll
 D:\DDIT\sem6\SOC\project\BudgetManager\WCF-BudgetManager\EmployeeLibrary\EmployeeLibrary\obj\Debug\EmployeeLibrary.pdb

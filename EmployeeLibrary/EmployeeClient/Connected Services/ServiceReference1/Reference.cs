@@ -26,6 +26,42 @@ namespace EmployeeClient.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/login", ReplyAction="http://tempuri.org/IEmployeeService/loginResponse")]
         System.Threading.Tasks.Task<string> loginAsync(string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/getName", ReplyAction="http://tempuri.org/IEmployeeService/getNameResponse")]
+        string getName(int uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/getName", ReplyAction="http://tempuri.org/IEmployeeService/getNameResponse")]
+        System.Threading.Tasks.Task<string> getNameAsync(int uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/addInncome", ReplyAction="http://tempuri.org/IEmployeeService/addInncomeResponse")]
+        System.Data.DataSet addInncome();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/addInncome", ReplyAction="http://tempuri.org/IEmployeeService/addInncomeResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> addInncomeAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/addExpense", ReplyAction="http://tempuri.org/IEmployeeService/addExpenseResponse")]
+        System.Data.DataSet addExpense();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/addExpense", ReplyAction="http://tempuri.org/IEmployeeService/addExpenseResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> addExpenseAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/addOwnIncomeCategory", ReplyAction="http://tempuri.org/IEmployeeService/addOwnIncomeCategoryResponse")]
+        string addOwnIncomeCategory(int uid, string cat_name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/addOwnIncomeCategory", ReplyAction="http://tempuri.org/IEmployeeService/addOwnIncomeCategoryResponse")]
+        System.Threading.Tasks.Task<string> addOwnIncomeCategoryAsync(int uid, string cat_name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/getOwnIncomeCategory", ReplyAction="http://tempuri.org/IEmployeeService/getOwnIncomeCategoryResponse")]
+        System.Data.DataSet getOwnIncomeCategory(int uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/getOwnIncomeCategory", ReplyAction="http://tempuri.org/IEmployeeService/getOwnIncomeCategoryResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> getOwnIncomeCategoryAsync(int uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/addTransaction", ReplyAction="http://tempuri.org/IEmployeeService/addTransactionResponse")]
+        string addTransaction(int income, string cat, int uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeService/addTransaction", ReplyAction="http://tempuri.org/IEmployeeService/addTransactionResponse")]
+        System.Threading.Tasks.Task<string> addTransactionAsync(int income, string cat, int uid);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -69,6 +105,54 @@ namespace EmployeeClient.ServiceReference1 {
         
         public System.Threading.Tasks.Task<string> loginAsync(string username, string password) {
             return base.Channel.loginAsync(username, password);
+        }
+        
+        public string getName(int uid) {
+            return base.Channel.getName(uid);
+        }
+        
+        public System.Threading.Tasks.Task<string> getNameAsync(int uid) {
+            return base.Channel.getNameAsync(uid);
+        }
+        
+        public System.Data.DataSet addInncome() {
+            return base.Channel.addInncome();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> addInncomeAsync() {
+            return base.Channel.addInncomeAsync();
+        }
+        
+        public System.Data.DataSet addExpense() {
+            return base.Channel.addExpense();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> addExpenseAsync() {
+            return base.Channel.addExpenseAsync();
+        }
+        
+        public string addOwnIncomeCategory(int uid, string cat_name) {
+            return base.Channel.addOwnIncomeCategory(uid, cat_name);
+        }
+        
+        public System.Threading.Tasks.Task<string> addOwnIncomeCategoryAsync(int uid, string cat_name) {
+            return base.Channel.addOwnIncomeCategoryAsync(uid, cat_name);
+        }
+        
+        public System.Data.DataSet getOwnIncomeCategory(int uid) {
+            return base.Channel.getOwnIncomeCategory(uid);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> getOwnIncomeCategoryAsync(int uid) {
+            return base.Channel.getOwnIncomeCategoryAsync(uid);
+        }
+        
+        public string addTransaction(int income, string cat, int uid) {
+            return base.Channel.addTransaction(income, cat, uid);
+        }
+        
+        public System.Threading.Tasks.Task<string> addTransactionAsync(int income, string cat, int uid) {
+            return base.Channel.addTransactionAsync(income, cat, uid);
         }
     }
 }

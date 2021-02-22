@@ -18,10 +18,10 @@
             <br />
             <br />
             <asp:Label ID="Label3" runat="server" Text="Password :"></asp:Label>
-            <asp:TextBox ID="pass" runat="server"></asp:TextBox>
+            <asp:TextBox ID="pass" TextMode="Password" runat="server"></asp:TextBox>
             <br />
             <br />
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Login" />
+            <asp:Button ID="Button1"  runat="server" OnClick="Button1_Click" Text="Login" />
             <br />
             <br />
             <asp:Label ID="Label4" runat="server"></asp:Label>

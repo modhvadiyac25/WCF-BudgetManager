@@ -1,102 +1,60 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="EmployeeClient.Home" %>
 
 <!DOCTYPE html>
-<!DOCTYPE html>
+
 <html>
-<head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
+    <head runat="server"><title>Home Page</title></head>
+    <body>
+        
+        <form id="form1" runat="server">
+               <div>
+                    <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
+                <Items>
+                    <asp:MenuItem NavigateUrl="~/Home.aspx" Text="Home" Value="Home">
+                    </asp:MenuItem>
 
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-}
+                    <asp:MenuItem NavigateUrl="~/Home.aspx" Text="Categories" Value="Categories">
+                        <asp:MenuItem NavigateUrl="~/AddIncome.aspx" Text="Add Income" Value="AddIncome">
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/AddExpense.aspx" Text="Add Expense" Value="AddExpense">
+                        </asp:MenuItem>
+                    </asp:MenuItem>
 
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+                    <asp:MenuItem NavigateUrl="~/Home.aspx" Text="Add your own categories" Value="AddYourOwnCategories">
+                        <asp:MenuItem NavigateUrl="~/AddOwnIncome.aspx" Text="Add your own income category" Value="AddYourOwnIncome">
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/AddOwnExpense.aspx" Text="Add your own expense category" Value="AddYourOwnExpense">
+                        </asp:MenuItem>
+                    </asp:MenuItem>
 
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
+                    <asp:MenuItem NavigateUrl="~/Logout.aspx" Text="Logout" Value="Logout">
+                    </asp:MenuItem>
+                </Items>
+            </asp:Menu>
+               </div>
+            <div>
 
-.dropdown .dropbtn {
-  font-size: 16px;  
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
+                <br />
+                <br />
 
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
-}
+                <br />
+                Welcome ,
+                <asp:Label ID="Label2" runat="server"></asp:Label>
+                <br />
+                <br />
+                <br />
+                <asp:Label ID="Label1" runat="server" Text="Select Month and Year"></asp:Label>
+                <br />
+                <br />
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
+                <asp:TextBox ID="TextBox1" TextMode="Month" runat="server"></asp:TextBox>
 
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
+                <br />
+                <br />
+                <asp:Button ID="find" runat="server" Text="Find" />
 
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
+            </div>
+        </form>
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-</style>
-</head>
-<body>
-
-<div class="navbar">
-  <a href="#home">Home</a>
-  <div class="dropdown">
-    <button class="dropbtn">Categories 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">Add Income</a>
-      <a href="#">Add Expense</a>
-    </div>
-  </div> 
-  <div class="dropdown">
-    <button class="dropbtn">Add Your Own Categories 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">Add Your Own Income Category</a>
-      <a href="#">Add Your Own Expense Category</a>
-    </div>
-  </div> 
-  <a href="#">Logout</a>
-</div>
-
-<h3>Select Month and Year</h3>
-
-<input type="month" id="trasac_month" name="trasac_month">
-</body>
+    </body>
 </html>

@@ -28,11 +28,11 @@
             Mobile No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="mno" runat="server" Height="20px" style="margin-left: 0px" Width="266px" required></asp:TextBox>
             <br />
             <br />
-            Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="pass" runat="server" Width="272px" required></asp:TextBox>
+            Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox TextMode="Password" ID="pass" runat="server" Width="272px" required></asp:TextBox>
             <br />
             <asp:CompareValidator ControlToCompare="pass" ControlToValidate="cpass"  ID="CompareValidator1" runat="server" ErrorMessage="Password and Confirm Password does not match !" ForeColor="Red"></asp:CompareValidator>
             <br />
-            Confirm Pasword&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="cpass" runat="server" Width="272px" required></asp:TextBox>
+            Confirm Pasword&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="cpass" TextMode="Password" runat="server" Width="272px" required></asp:TextBox>
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

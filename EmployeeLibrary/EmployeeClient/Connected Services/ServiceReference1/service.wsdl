@@ -4,6 +4,7 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IEmployeeService_saveUser_InputMessage">
@@ -18,6 +19,42 @@
   <wsdl:message name="IEmployeeService_login_OutputMessage">
     <wsdl:part name="parameters" element="tns:loginResponse" />
   </wsdl:message>
+  <wsdl:message name="IEmployeeService_getName_InputMessage">
+    <wsdl:part name="parameters" element="tns:getName" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeService_getName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeService_addInncome_InputMessage">
+    <wsdl:part name="parameters" element="tns:addInncome" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeService_addInncome_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addInncomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeService_addExpense_InputMessage">
+    <wsdl:part name="parameters" element="tns:addExpense" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeService_addExpense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addExpenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeService_addOwnIncomeCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:addOwnIncomeCategory" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeService_addOwnIncomeCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addOwnIncomeCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeService_getOwnIncomeCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:getOwnIncomeCategory" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeService_getOwnIncomeCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getOwnIncomeCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeService_addTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:addTransaction" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeService_addTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addTransactionResponse" />
+  </wsdl:message>
   <wsdl:portType name="IEmployeeService">
     <wsdl:operation name="saveUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeService/saveUser" message="tns:IEmployeeService_saveUser_InputMessage" />
@@ -26,6 +63,30 @@
     <wsdl:operation name="login">
       <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeService/login" message="tns:IEmployeeService_login_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeService/loginResponse" message="tns:IEmployeeService_login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeService/getName" message="tns:IEmployeeService_getName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeService/getNameResponse" message="tns:IEmployeeService_getName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addInncome">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeService/addInncome" message="tns:IEmployeeService_addInncome_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeService/addInncomeResponse" message="tns:IEmployeeService_addInncome_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addExpense">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeService/addExpense" message="tns:IEmployeeService_addExpense_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeService/addExpenseResponse" message="tns:IEmployeeService_addExpense_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addOwnIncomeCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeService/addOwnIncomeCategory" message="tns:IEmployeeService_addOwnIncomeCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeService/addOwnIncomeCategoryResponse" message="tns:IEmployeeService_addOwnIncomeCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getOwnIncomeCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeService/getOwnIncomeCategory" message="tns:IEmployeeService_getOwnIncomeCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeService/getOwnIncomeCategoryResponse" message="tns:IEmployeeService_getOwnIncomeCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeService/addTransaction" message="tns:IEmployeeService_addTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeService/addTransactionResponse" message="tns:IEmployeeService_addTransaction_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IEmployeeService" type="tns:IEmployeeService">
@@ -41,6 +102,60 @@
     </wsdl:operation>
     <wsdl:operation name="login">
       <soap:operation soapAction="http://tempuri.org/IEmployeeService/login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getName">
+      <soap:operation soapAction="http://tempuri.org/IEmployeeService/getName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addInncome">
+      <soap:operation soapAction="http://tempuri.org/IEmployeeService/addInncome" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addExpense">
+      <soap:operation soapAction="http://tempuri.org/IEmployeeService/addExpense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addOwnIncomeCategory">
+      <soap:operation soapAction="http://tempuri.org/IEmployeeService/addOwnIncomeCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOwnIncomeCategory">
+      <soap:operation soapAction="http://tempuri.org/IEmployeeService/getOwnIncomeCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addTransaction">
+      <soap:operation soapAction="http://tempuri.org/IEmployeeService/addTransaction" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

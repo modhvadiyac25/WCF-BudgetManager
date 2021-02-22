@@ -11,7 +11,7 @@ namespace EmployeeClient
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Label4.Text = "page Load";
+           // Label4.Text = "";
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -22,7 +22,18 @@ namespace EmployeeClient
             string username = email.Text;
             string password = pass.Text;
 
-            /*Session["uid"]*/ Label4.Text = proxy.login(username.ToString(), password.ToString());
+             String result = proxy.login(username.ToString(), password.ToString());
+            if ((String.Compare(result, "false") == 1))
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Username or PAssword May Incorrect !')", true);
+            }
+            else
+            {
+                Session["uid"] = result;
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Login Succesfully')", true);
+                Response.Redirect("Home.aspx");
+            }
+
             // = Session["uid"].ToString() + "this is user id ";
             
             // Label4.Text = i++.ToString();

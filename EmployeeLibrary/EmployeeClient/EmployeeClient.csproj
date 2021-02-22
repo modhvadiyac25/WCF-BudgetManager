@@ -81,7 +81,7 @@
     </None>
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
-    <Content Include="LoginForm.aspx" />
+    <Content Include="Logout.aspx" />
     <Content Include="Profile.aspx" />
     <Content Include="RegisterForm.aspx" />
     <Content Include="Web.config" />
@@ -135,12 +135,12 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.aspx.cs">
-      <DependentUpon>LoginForm.aspx</DependentUpon>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="LoginForm.aspx.designer.cs">
-      <DependentUpon>LoginForm.aspx</DependentUpon>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
@@ -164,6 +164,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServiceReference1\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\service2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />

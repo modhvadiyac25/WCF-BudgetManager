@@ -38,12 +38,12 @@ namespace EmployeeClient
             if (0 == String.Compare(ack , "saved"))
             {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')", true);
-               
+                Response.Redirect("Login.aspx");
             }
             else
             {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('something went wrong')", true);
-
+              
               //  Label3.Text = ack;
             }
         }

@@ -23,5 +23,24 @@ namespace EmployeeLibrary
 
         [OperationContract]
         string login(string username, string password);
+
+        [OperationContract]
+        string getName(int uid);
+
+        [OperationContract]
+        DataSet addInncome();
+
+        [OperationContract]
+        DataSet addExpense();
+
+        [OperationContract]
+        string addOwnIncomeCategory(int uid,string cat_name);
+
+        [OperationContract]
+        DataSet getOwnIncomeCategory(int uid);
+
+        [OperationContract]
+        string addTransaction(int income,string cat,int uid);
+         
     }
 }

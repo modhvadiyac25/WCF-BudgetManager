@@ -15,44 +15,166 @@ namespace EmployeeLibrary
         static string connectionString = @"Data Source = (localdb)\MSSQLLocalDB;Initial Catalog = BudgetManager; Integrated Security = True; Connect Timeout = 30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         SqlConnection con = new SqlConnection(connectionString);
 
+        public string addTransaction(int income,string cat,int uid)
+        {
+            DataSet ds=null;
+            try
+            {
+                string d = DateTime.Now.ToString("d/M/yyyy");
+                string query = "insert into trasaction(tdate,ttime,t_cat,tot_inc,uid) values (@date,@time,@cat,@inc,@userid)";
+                SqlCommand cmd = new SqlCommand(query, con);
+                // cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@date", d);
+                cmd.Parameters.AddWithValue("@time", DateTime.Now.ToString("h:mm:ss"));
+                cmd.Parameters.AddWithValue("@cat", cat);
+                cmd.Parameters.AddWithValue("@inc", income);
+                cmd.Parameters.AddWithValue("@userid", uid);
+                con.Open();
+                int ack = cmd.ExecuteNonQuery();
+                con.Close();
+                if (ack == 1)
+                {
+                     return "saved";
+ 
+                }
+                else
+                {
+                    return "false";
+                }
+                
+
+            }
+            catch (Exception ex)
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+                return (ex.Message.ToString());
+            }
+
+            
+        }
+
+        public DataSet getOwnIncomeCategory(int uid)
+        {
+            con.Open();
+            string query = "select * from o_income where uid='" + uid +"'";
+            SqlCommand com = new SqlCommand(query, con);
+            SqlDataAdapter da = new SqlDataAdapter(com);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
+        public string addOwnIncomeCategory(int uid, string cat_name)
+        {
+            try
+            {
+                string query = "insert into o_income (oinc_name,uid) values (@catName,@userid)";
+                SqlCommand cmd = new SqlCommand(query, con);
+                // cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@catName", cat_name);
+                cmd.Parameters.AddWithValue("@userid", uid);
+                con.Open();
+                int ack = cmd.ExecuteNonQuery();
+                con.Close();
+                if (ack == 1)
+                {
+                    return "saved";
+                }
+                else
+                {
+                    return "failed";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+                return (ex.Message.ToString());
+            }
+
+
+            return "";
+        }
+
+        public DataSet addExpense()
+        {
+            con.Open();
+            SqlCommand com = new SqlCommand("select  expid,exp_cat from expense", con);
+            SqlDataAdapter da = new SqlDataAdapter(com);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
+        public DataSet addInncome()
+        {
+            con.Open();
+            SqlCommand com = new SqlCommand("select  incid,inc_cat from income", con);
+            SqlDataAdapter da = new SqlDataAdapter(com);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
+        public string getName(int uid)
+        {
+            try
+            {
+                string query = "select fname,lname from users where uid='" + uid + "'";
+                SqlCommand cmd = new SqlCommand(query, con);
+                con.Open();
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataReader sdr = cmd.ExecuteReader();
+
+                if (sdr.Read())
+                {
+                    return sdr["fname"].ToString() + " " + sdr["lname"].ToString();
+                }
+                else
+                {
+                    return "false";
+
+                }
+                sdr.Close();
+            }
+            catch (Exception ex)
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+                return (ex.Message.ToString());
+            }
+        }
 
         public string login(string username,string password)
         {
             try
             {
-                string query = "select * from users";
+                string query = "select * from users where email='" + username + "' and password='" + password + "'";
                 SqlCommand cmd = new SqlCommand(query, con);
                 con.Open();
                 cmd.CommandType = CommandType.Text;
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
+         
+                SqlDataReader sdr = cmd.ExecuteReader();
+
+                if (sdr.Read())
                 {
-                    if ((String.Compare(username, dr["email"].ToString()) == 1) && (String.Compare(username, dr["password"].ToString()) == 1))
-                    {
-                        return dr["uid"].ToString();
-                    }
-                    else
-                    {
-                        return "Username or Password May Incorrect !!";
-                    }
-            
+                    return sdr["uid"].ToString();
                 }
+                else
+                {
+                    return "false";
 
-                dr.Close();
-                return "Faild";
-
-                //if (sdr.HasRows)
-                //{
-                //    while (sdr.Read())
-                //    {
-                //        return sdr.GetValue(1).ToString();
-                //        //sdr.GetValue(0).ToString();
-                //    }
-                //}
-                //else
-                //{
-                //    return "faild";
-                //}
+                } 
+                sdr.Close(); 
             }
             catch (Exception ex)
             {
